@@ -81,7 +81,7 @@ class Game:
             if(self.player.lives <= 0):
                 self.playing = False
 
-        if (self.score % 20) == 0 and self.score != 0 and self.alliesCreated < self.score/20:
+        if (self.score % 30) == 0 and self.score != 0 and self.alliesCreated < self.score/30:
             a = Ally(self)
             self.alliesCreated += 1
 
@@ -114,6 +114,9 @@ class Game:
         self.all_sprites.draw(self.screen)
         self.draw_text(str(self.score), 24, WIDTH/2, 20)
         self.draw_text(str(self.player.lives) + " LIVES", 20, 40, HEIGHT-30)
+
+        allyWord = " ALLY" if len(self.allies) == 1 else " ALLIES"
+        self.draw_text(str(len(self.allies)) + allyWord, 20, WIDTH-40, HEIGHT-30)
 
         # *after* drawing everything, flip the display
         pg.display.flip()

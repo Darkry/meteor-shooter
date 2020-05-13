@@ -40,5 +40,5 @@ class Ally(pygame.sprite.Sprite):
             self.speedx = -2
 
         #Shoot?
-        if(random.randrange(1,15) == 1):
+        if(random.randrange(1,22) == 1):
             self.shoot()
